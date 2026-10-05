@@ -3,7 +3,8 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-  retries: 0,
+  // На CI невдалий тест перезапускається до двох разів: сайт, що тестується, зовнішній
+  retries: process.env.CI ? 2 : 0,
   workers: 1,
   timeout: 60_000,
   expect: { timeout: 10_000 },

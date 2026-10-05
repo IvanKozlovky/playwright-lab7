@@ -52,6 +52,8 @@ test('додавання ноутбука HP LP3065 в кошик і видал�
   await expect(page.getByText(/Availability:\s*In Stock/)).toBeVisible();
 
   // Крок 4
+  // Обробник кнопки "Add to Cart" підключається скриптом сторінки, тому чекаємо повного завантаження
+  await page.waitForLoadState('load');
   await page.locator('#input-quantity').fill('2');
   await page.locator('#button-cart').click();
   await expect(page.locator('.alert-success')).toContainText(

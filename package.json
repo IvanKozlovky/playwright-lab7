@@ -1,0 +1,14 @@
+{
+  "name": "playwright-lab7",
+  "version": "1.0.0",
+  "description": "Лабораторна робота 7. Автоматизовані тест-кейси на Playwright",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^22.0.0"
+  }
+}
